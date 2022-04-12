@@ -14,7 +14,11 @@ type UserResponse = {
   avatar_url: string;
 };
 
-const execute = async (code: string) => {
+type ServiceParams = {
+  code: string;
+};
+
+const execute = async ({ code }: ServiceParams) => {
   const url = 'https://github.com/login/oauth/access_token';
 
   const { data } = await axios.post<AuthServices>(url, null, {
