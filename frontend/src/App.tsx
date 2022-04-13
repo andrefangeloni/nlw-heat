@@ -1,7 +1,11 @@
+import { LoginBox } from './components/LoginBox';
+import { MessageList } from './components/MessageList';
+
 import styles from './App.module.scss';
 
 export const App = () => (
   <div className={styles.contentWrapper}>
-    <h1>Hello World!</h1>
+    <MessageList />
+    <LoginBox />
   </div>
 );
