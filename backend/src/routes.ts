@@ -2,6 +2,7 @@ import { Router } from 'express';
 
 import { ensureAuthenticate } from './middlewares/ensureAuthenticate';
 
+import ProfileUserController from './controllers/ProfileUserController';
 import CreateMessageController from './controllers/CreateMessageController';
 import GetLast3MessagesController from './controllers/GetLast3MessagesController';
 import AuthenticateUserController from './controllers/AuthenticateUserController';
@@ -12,3 +13,5 @@ router.post('/authenticate', AuthenticateUserController.handle);
 
 router.get('/messages/last3', GetLast3MessagesController.handle);
 router.post('/messages', ensureAuthenticate, CreateMessageController.handle);
+
+router.get('/profile', ensureAuthenticate, ProfileUserController.handle);
