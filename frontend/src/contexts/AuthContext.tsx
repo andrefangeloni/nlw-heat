@@ -37,6 +37,7 @@ export const AuthProvider = ({ children }: AuthProvider) => {
     const { token, user } = data;
 
     localStorage.setItem('@dowhile:token', token);
+    api.defaults.headers.common.authorization = `Bearer ${token}`;
     setUser(user);
   };
 
