@@ -1,11 +1,18 @@
 import { LoginBox } from './components/LoginBox';
 import { MessageList } from './components/MessageList';
 
-import styles from './App.module.scss';
+import { useAuth } from './hooks/useAuth';
 
-export const App = () => (
-  <div className={styles.contentWrapper}>
-    <MessageList />
-    <LoginBox />
-  </div>
-);
+import styles from './App.module.scss';
+import { SendMessageForm } from './components/SendMessageForm';
+
+export const App = () => {
+  const { user } = useAuth();
+
+  return (
+    <div className={styles.contentWrapper}>
+      <MessageList />
+      {!!user ? <SendMessageForm /> : <LoginBox />}
+    </div>
+  );
+};
