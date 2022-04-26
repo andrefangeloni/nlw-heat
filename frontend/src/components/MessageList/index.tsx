@@ -1,5 +1,7 @@
 import React from 'react';
 
+import io from 'socket.io-client';
+
 import logo from '../../assets/logo.svg';
 import { api } from '../../services/api';
 
@@ -14,8 +16,28 @@ type Message = {
   };
 };
 
+const messagesQueue: Message[] = [];
+
+const socket = io('http://localhost:3333');
+
+socket.on('new_message', (newMessage: Message) => {
+  messagesQueue.push(newMessage);
+});
+
 export const MessageList = () => {
   const [messages, setMessages] = React.useState<Message[]>([]);
+
+  React.useEffect(() => {
+    setInterval(() => {
+      if (messagesQueue.length) {
+        setMessages((prevState) =>
+          [messagesQueue[0], prevState[0], prevState[1]].filter(Boolean),
+        );
+
+        messagesQueue.shift();
+      }
+    }, 3000);
+  }, []);
 
   React.useEffect(() => {
     const getMessages = async () => {
