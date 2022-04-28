@@ -22,10 +22,8 @@ export const UserPhoto = ({ imageUri, sizes = 'NORMAL' }: Props) => {
   const { avatarSize, containerSize } = SIZES[sizes];
 
   return (
-    <S.Avatar
-      imageUri={imageUri}
-      avatarSize={avatarSize}
-      containerSize={containerSize}
-    />
+    <S.AvatarWrapper containerSize={containerSize}>
+      <S.Avatar imageUri={imageUri} avatarSize={avatarSize} />
+    </S.AvatarWrapper>
   );
 };

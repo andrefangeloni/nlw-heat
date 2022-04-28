@@ -10,10 +10,12 @@ export const Header = () => (
   <S.Container>
     <LogoSvg />
 
-    <UserPhoto imageUri="https://github.com/andrefangeloni.png" />
+    <S.Wrapper>
+      <S.LogoutButton>
+        <S.Logout>Sair</S.Logout>
+      </S.LogoutButton>
 
-    <S.LogoutButton>
-      <S.Logout>Sair</S.Logout>
-    </S.LogoutButton>
+      <UserPhoto imageUri="https://github.com/andrefangeloni.png" />
+    </S.Wrapper>
   </S.Container>
 );

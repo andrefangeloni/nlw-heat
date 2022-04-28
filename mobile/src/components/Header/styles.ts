@@ -10,10 +10,16 @@ export const Container = styled.View`
   justify-content: space-between;
 `;
 
+export const Wrapper = styled.View`
+  flex-direction: row;
+  align-items: center;
+`;
+
 export const LogoutButton = styled.TouchableOpacity``;
 
 export const Logout = styled.Text`
   font-size: 15px;
   font-family: ${FONTS.REGULAR};
   color: ${COLORS.WHITE};
+  margin-right: 20px;
 `;
