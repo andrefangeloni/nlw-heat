@@ -1,8 +1,13 @@
+import { MotiView } from 'moti';
 import styled from 'styled-components/native';
 
 import { COLORS, FONTS } from '../../theme';
 
-export const Container = styled.View`
+export const Container = styled(MotiView).attrs({
+  from: { opacity: 0, translateY: -50 },
+  animate: { opacity: 1, translateY: 0 },
+  transition: { type: 'timing', duration: 700 },
+})`
   width: 100%;
   margin-bottom: 36px;
 `;
