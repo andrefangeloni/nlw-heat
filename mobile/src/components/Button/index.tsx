@@ -17,10 +17,15 @@ export const Button = ({
   icon,
   title,
   color,
+  onPress,
   backgroundColor,
   isLoading = false,
 }: Props) => (
-  <S.Container backgroundColor={backgroundColor} disabled={isLoading}>
+  <S.Container
+    onPress={onPress}
+    disabled={isLoading}
+    backgroundColor={backgroundColor}
+  >
     {isLoading ? (
       <S.Loading color={color} />
     ) : (
