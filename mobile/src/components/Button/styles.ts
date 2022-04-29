@@ -23,6 +23,7 @@ export const Container = styled.TouchableOpacity.attrs({
 `;
 
 export const ButtonText = styled.Text<ButtonProps>`
+  text-transform: uppercase;
   font-family: ${FONTS.BOLD};
   color: ${({ color }) => color};
 `;

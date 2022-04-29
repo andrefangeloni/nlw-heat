@@ -8,7 +8,7 @@ export const SignInBox = () => (
   <S.Container>
     <Button
       icon="github"
-      title="ENTRAR COM O GITHUB"
+      title="entrar com o github"
       color={COLORS.BLACK_PRIMARY}
       backgroundColor={COLORS.YELLOW}
     />
